@@ -102,3 +102,20 @@ SELECT
 FROM musicians m
 LEFT JOIN bands b ON b.id = m.band_id ;
 
+
+
+
+-- right join
+SELECT 
+	m.name AS musician_name,
+	b.name AS band_name,
+	b.id AS band_id,
+	m.musician_id
+FROM musicians m
+RIGHT JOIN bands b ON b.id = m.band_id ;
+
+
+-- Exercise 1: Create a songs table with the following colums: name, id, lenght, band_id
+-- the Songs should have Many to One relationship with the bands
+-- insert a song for a band with the proper foreign key
+-- Perform a query to get all the songs with the bands names
