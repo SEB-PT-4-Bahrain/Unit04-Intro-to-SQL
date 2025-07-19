@@ -60,6 +60,14 @@ CREATE TABLE musicians(
 	name VARCHAR(255) NOT NULL UNIQUE,
 	age INTEGER NOT NULL,
 	sings BOOLEAN,
-	dances BOOLEAN
+	dances BOOLEAN,
+	-- foreign key (what band is he in)
+	band_id INTEGER REFERENCES bands(id)
 );
+DROP TABLE musicians;
 
+SELECT * FROM bands;
+SELECT * FROM musicians;
+
+INSERT INTO musicians(name,age,sings,dances,band_id)
+VALUES('Paul Mccartney',59, true, false, 7);
