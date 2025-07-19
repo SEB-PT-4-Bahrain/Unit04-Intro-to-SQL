@@ -69,5 +69,36 @@ DROP TABLE musicians;
 SELECT * FROM bands;
 SELECT * FROM musicians;
 
-INSERT INTO musicians(name,age,sings,dances,band_id)
-VALUES('Paul Mccartney',59, true, false, 7);
+INSERT INTO musicians(name,age,sings,dances)
+VALUES('Omar',42, false, false);
+
+
+
+
+-- get all the musicians that are in the beatles
+-- by default it uses an inner join
+SELECT 
+	m.name AS musician_name,
+	b.name AS band_name,
+	b.id AS band_id,
+	m.musician_id
+FROM musicians m
+JOIN bands b ON b.id = m.band_id ;
+
+
+SELECT 
+	*
+FROM musicians
+JOIN bands ON bands.id = musicians.band_id ;
+
+
+
+-- left join
+SELECT 
+	m.name AS musician_name,
+	b.name AS band_name,
+	b.id AS band_id,
+	m.musician_id
+FROM musicians m
+LEFT JOIN bands b ON b.id = m.band_id ;
+
