@@ -35,10 +35,31 @@ VALUES
 -- delete row
 -- BE CAREFUL: Always a WHERE clause
 DELETE FROM bands
-WHERE name='The Beatles';
+WHERE genre='Pop';
 
 
 -- Updating a row
 UPDATE bands
-SET genre='Arabic Music'
+SET genre='Pop'
 WHERE name='Metallica';
+
+
+-- Order the values get
+SELECT * FROM bands
+ORDER BY name DESC;
+
+
+-- relationship always lives on the many side in a many to one
+
+-- Relationships
+
+-- One to Many
+
+CREATE TABLE musicians(
+	musician_id SERIAL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL UNIQUE,
+	age INTEGER NOT NULL,
+	sings BOOLEAN,
+	dances BOOLEAN
+);
+
